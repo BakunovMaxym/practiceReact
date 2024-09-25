@@ -1,0 +1,269 @@
+.App {
+  /* display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; */
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-inline: 7%;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+}
+.logo img{
+  margin-top: 7px;
+  width: 40px;
+  height: 40px;
+}
+.progresBarContainer{
+  display: flex;
+  margin-top: 30px;
+}
+.progresBarItemCircle {
+  border: 1px, solid, rgb(189, 189, 189);
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+}
+.progresBarItemLine{
+  width: 30px;
+  height: 1px;
+  background-color: rgb(189, 189, 189);
+  padding: 0;
+  margin: 6px 5px 0 5px;
+}
+.title, .phoneForm{
+  width: 35%;
+  align-self: center;
+  margin-inline: 32.5%;
+}
+.reg{
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 40px;
+  text-align: start;
+}
+.regText{
+  font-size: 1.2rem;
+  text-align: start;
+  color: rgb(176, 176, 176);
+}
+.privacyContainer{
+  margin-top: 30px;
+  background-color: rgb(240, 240, 240);
+  color: gray;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0;
+}
+.privacyMsg{
+  text-align: start;
+  width: 80%;
+}
+.enterPhoneContainer{
+  margin-top: 30px;
+  margin-left: 32.5%;
+  width: 34.7%;
+}
+.phoneForm {
+  width: 100%;
+  margin: 0;
+  align-self: self-start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.phoneFormContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: 2px solid rgb(240, 240, 240);
+  /* padding: 30px; */
+  border-radius: 10px;
+  /* display: flex; */
+  width: 100%;
+}
+.enterPhone {
+  margin: 30px;
+  margin-bottom: 30px;
+}
+.phoneFormBody{
+  display: flex;
+  margin: 0 30px 30px 30px;
+}
+.sendBtn{
+  margin-top: 30px;
+  border: 2px solid rgb(240, 240, 240);
+  background: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.errorMsg{
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+  text-align: start;
+  background-color: rgb(255, 243, 243);
+}
+.errorMsg.activeError{
+  display: block;
+}
+.numberConfirm{
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  position: relative;
+  text-align: start;
+  padding: 15px;
+  max-width: 35vw;
+  width: 500px;
+  min-width: 400px;
+}
+.phoneNumber{
+  margin: 0;
+  font-size: 1.2rem;
+}
+.numberNotConf{
+  margin: 0;
+  color: gray;
+}
+.codeSubmitForm{
+  margin: 30px 32.5% 30px 32.5%;
+  width: 35%;
+  align-items: start;
+  text-align: start;
+  position: relative;
+}
+.sendAgain{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 1rem;
+  color: rgb(83, 189, 242);
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.confirmTip{
+  margin: 5px 0 0 0;
+  font-size: 0.8rem;
+  color: gray;
+}
+.regPassword{
+  margin: 30px 32.5% 30px 32.5%;
+  width: 35%;
+  align-items: start;
+  text-align: start;
+  position: relative;
+  
+}
+.regPasswordContainer{
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  padding: 30px;
+
+}
+.regBtn{
+  background-color: rgb(83, 189, 242);
+  color: aliceblue;
+  font-weight: 600;
+  width: 150px;
+}
+.activeIcon{
+  background-color: rgb(83, 189, 242);
+  border-color: rgb(83, 189, 242);
+}
+.personalDataForm{
+  margin: 30px 32.5% 30px 32.5%;
+  width: 35%;
+  align-items: start;
+  text-align: start;
+  position: relative;
+}
+.regsNameContainer{
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10px;
+  padding: 30px;
+}
+.socialMediaListContainer{
+  display: flex;
+}
+.contactsTittle{
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 5px 0 0 0;
+}
+.contactsTip{
+  font-size: 0.8rem;
+  padding: 5px 0 0 0;
+  margin: 5px 0 20px 0;
+  color: gray;
+}
+.addSocialmedia{
+  font-size: 1rem;
+  color: rgb(83, 189, 242);
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1300px) {
+  .title{
+    width: 90%;
+    margin-inline: 5%;
+  }
+  .enterPhoneContainer{
+    width: 90%;
+    margin-inline: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .phoneFormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .codeSubmitForm{
+    width: 90%;
+    margin-inline: 5%;
+
+  }
+  .numberConfirm{
+    width: 50%;
+    
+  }
+  .sendAgain{
+    top: 78%;
+    left: 100px;
+    width: 118px;
+  }
+  .regPassword, .personalDataForm{
+    width: 90%;
+    margin-inline: 5%;
+  }
+
+}

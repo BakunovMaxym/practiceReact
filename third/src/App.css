@@ -1,0 +1,236 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+.appHeader{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 15% 60px 15%;
+}
+.headerLeft{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0;
+}
+.headerRight{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.headerRight a div{
+  display: flex;
+  justify-content: space-between;
+}
+.headerRight a{
+  color: white;
+}
+.headerRight a p{
+  background-color: #EA2027;
+  margin: 0 50px 0 10px;
+  padding: 0;
+  border-radius: 5px;
+}
+.soundBtn{
+  width: 100px;
+  background: none;
+  border: none;
+  color: black;
+  font-weight: 600;
+}
+.soundBtn:hover{
+  cursor: pointer;
+}
+.palleteContainer{
+  margin-inline: 15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 50px;
+}
+.colorFrame{
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 6px;
+}
+.colorFrame:hover{
+  box-shadow: 0 0 15px aliceblue;
+  cursor: pointer;
+}
+.colorContainer{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.colorContainerStraight{
+  overflow: visible;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 20%));
+}
+.tiny{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.large{
+  height: 22vh;
+  position: relative;
+  cursor: pointer;
+}
+.copy{
+  position: absolute;
+  z-index: 1;
+  padding: 10px 35px 10px 35px;
+  font-size: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  background: none;
+  border: 2px solid rgb(184, 184, 184);
+  text-shadow: 2px 2px rgb(0, 0, 0);
+  border-radius: 5px;
+  opacity: 0;
+  transition: .3s ease;
+}
+.large:hover .copy{
+  opacity: 1;
+  cursor: pointer;
+}
+.large:active .copy{
+  transform: scale(0.8);
+}
+.large p{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: antiquewhite;
+  font-size: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 2px black;
+}
+.colorFrameFooter{
+  display: flex;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+.colorFrameFooterLarge{
+  padding: 1.2vh 20px 2.1vh 0;
+  font-weight: 600;
+  justify-content: end;
+}
+.colorFrameFooter p{
+  margin: 10px 0 0 0;
+}
+.slideIn{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-origin: bottom;
+}
+.slideOut{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-origin: top;
+}
+.palleteLink{
+  text-decoration: none;
+}
+.back{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.palleteHeader{
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8vh 20px 0.8vh 20px;
+}
+.dropdownContainer{
+  position: relative;
+}
+.dropdownBtn{
+  background-color: black;
+  color: aliceblue;
+  width: 300px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.7vh;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.dropdownMenuList{
+  position: absolute;
+  top: 50px;
+  background-color: aliceblue;
+  width: 300px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 7px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 10;
+}
+.dropdownMenuList.active{
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.dropdownMenuItem{
+  color: black;
+  padding: 7px;
+  border: 1px ridge rgb(210, 210, 210);
+  text-shadow: none;
+}
+.dropdownMenuItem:hover{
+  cursor: pointer;
+  background-color: black;
+  color: aliceblue;
+  border: 1px ridge black;
+}
+.copied{
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+}
+.active{
+  opacity: 1;
+  visibility: visible;
+  text-shadow: 4px 4px 2px black;
+  text-align: center;
+  color: aliceblue;
+}
+.copyText{
+  margin: 0;
+  margin-top: 30vh;
+  background-color: rgba(255, 255, 255, 0.5);;
+  font-size: 7rem;
+  padding: 20px 0 40px 0;
+}
+.copyColor{
+  font-size: 2rem;
+}
