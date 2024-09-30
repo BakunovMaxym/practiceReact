@@ -35,16 +35,18 @@ function EnterPhone({ auth }) {
     }
   };
 
+  let temp = parseInt(countryCode)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-      handlePhoneNumberSubmit(fullNumber, "enterPhonePage", setErrorMsg);
-      
+    handlePhoneNumberSubmit(fullNumber, "enterPhonePage", setErrorMsg);
+
   };
 
   return (
     <>
       <Header pageNumber="first" />
-      <Title/>
+      <Title />
       <div className="enterPhoneContainer">
         <form className="phoneForm" onSubmit={handleSubmit}>
           <div className="phoneFormContainer">
@@ -55,7 +57,8 @@ function EnterPhone({ auth }) {
                 sx={{ width: "200px", border: "none" }}
                 options={countries}
                 autoHighlight
-                disableClearable
+                    value={selectedCountry}
+                    disableClearable
                 getOptionLabel={(option) => "+" + option.code}
                 onChange={(e, value) => setCountryData(value)}
                 filterOptions={(options, state) => options.filter((option) =>

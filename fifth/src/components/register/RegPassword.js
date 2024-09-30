@@ -48,7 +48,7 @@ function RegPassword({ auth }) {
                         error={send && (!email.includes("@") || email === "")}
                         id="standard-helperText"
                         label="Enter your email"
-                        helperText={send && email === "" ? "Required*" : `${!email.includes("@") ? "Incorrect entry" : ""}`}
+                        helperText={send ? (email === "" ? "Required*" : `${!email.includes("@") ? "Incorrect entry" : ""}`) : ""}
                         variant="standard"
                         onChange={(e) => setEmail(e.target.value)}
                         sx={{

@@ -182,7 +182,7 @@ html{
   color: rgb(135, 135, 135);
   font-weight: 600;
   text-align: center;
-  margin: 5px;
+  /* margin: 5px; */
   flex: 1 1 auto;
   white-space: nowrap; 
 }

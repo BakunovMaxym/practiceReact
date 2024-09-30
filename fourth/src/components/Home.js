@@ -22,6 +22,7 @@ function Home() {
     return (
         <>
             <SearchPanel
+                setPageNumber={setPageNumber}
                 categories={categories}
                 setCategories={setCategories}
                 sortOrder={sortOrder}

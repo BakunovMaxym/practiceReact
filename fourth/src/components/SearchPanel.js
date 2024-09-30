@@ -1,11 +1,9 @@
 import { useRef, useState } from 'react';
 import useClickOutside from './useClickOutside';
 
-function SearchPanel({ categories, setCategories, sortOrder, setSortOrder, searchName, setSearchName, destination }) {
+function SearchPanel({setPageNumber, categories, setCategories, sortOrder, setSortOrder, searchName, setSearchName, destination }) {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
-
-    console.log(destination)
 
     const categoryHandler = (newCategory) => {
         setCategories(prevCategories => {
@@ -21,6 +19,7 @@ function SearchPanel({ categories, setCategories, sortOrder, setSortOrder, searc
             }
             return updatedCategories;
         });
+        setPageNumber(1);
     }
 
     const orderHandler = (order) => {
@@ -41,7 +40,7 @@ function SearchPanel({ categories, setCategories, sortOrder, setSortOrder, searc
                     type="text"
                     name="searchBox"
                     placeholder="Search"
-                    onChange={(event) => setSearchName(event.target.value)}
+                    onChange={(event) => {setSearchName(event.target.value); setPageNumber(1)}}
                 />
             </div>
 

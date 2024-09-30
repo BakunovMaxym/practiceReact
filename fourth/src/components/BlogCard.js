@@ -2,9 +2,7 @@ import '../App.css';
 import { Link } from "react-router-dom";
 
 function BlogCard({data, setCategories}) {
-  // const {data, setCategories} = props;
     const author = data.author;
-  console.log(author.profilePicture)
     const addCategory = (newCat) => { //set category to chosen in blog card
       setCategories(prevCategories => {
         const updatedCategories = new Set(prevCategories);

@@ -32,7 +32,6 @@ function BlogScroll({ pages, setPages, pageNumber, pageCount, handlePageNumber }
 
     const handleInput = (event) => {
         let intInput = parseInt(inputValue, 10);
-        console.log(typeof (intInput))
         if (event.key === "Enter" && intInput > 3 && intInput < pageCount - 3) {
             handlePageNumber(intInput);
         }
@@ -88,23 +87,16 @@ function BlogScroll({ pages, setPages, pageNumber, pageCount, handlePageNumber }
             ) : undefined
             }
             <div className="scrollBtnContainer">
+                    <>
+                        { pageNumber === 1 ? (<div/>) : (<button className="prevNext" onClick={() => handlePageNumber(pageNumber - 1)}>← Previous</button>)}
                 {windowWidth > 760 
-                    ? (
-                    <>
-                        <button className="prevNext" onClick={() => handlePageNumber(pageNumber - 1)}>← Previous</button>
-                        <div className="pageBtns">
-                            {btnsArr}
-                        </div>
-                        <button className="prevNext" onClick={() => handlePageNumber(pageNumber + 1)}>Next →</button>
-                    </>)
-                    : (
-                    <>
-                        <button className="prevNext" onClick={() => handlePageNumber(pageNumber - 1)}>← Previous</button>
-                        <div className="pageBtns">{pageNumber + " of " + pageCount}</div>
-                        <button className="prevNext" onClick={() => handlePageNumber(pageNumber + 1)}>Next →</button>
+                    ? (<div className="pageBtns">
+                        {btnsArr}
+                    </div>) 
+                    : (<div className="pageBtns">{pageNumber + " of " + pageCount}</div>)
+                }
+                        { Math.max(pageNumber, pages) === pageCount ? (<div/>) : (<button className="prevNext" onClick={() => handlePageNumber(pageNumber + 1)}>Next →</button>)}
                     </>
-                    )
-                    }
             </div>
         </div>
     );

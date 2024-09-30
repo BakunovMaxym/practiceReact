@@ -24,6 +24,7 @@ function Categories() {
     <div className="App">
       <div className="categoryPageBody">
         <SearchPanel
+          setPageNumber={setPageNumber}
           categories={categories}
           setCategories={setCategories}
           searchName={searchName}
@@ -36,7 +37,7 @@ function Categories() {
           categories={categories}
           setCategories={setCategories}
           searchName={searchName}
-          blogCount = {9}
+          blogCount = {8}
         />
 
       </div>
