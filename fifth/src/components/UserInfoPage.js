@@ -6,10 +6,14 @@ const UserInfoPage = () => {
   return (
     <div>
       {Object.entries(userInfo).map(([key, value]) => (
-        <p key={key}>
-          {key.charAt(0).toUpperCase() + key.slice(1)}: 
-          {typeof value === 'object' ? JSON.stringify(value) : value || "N/A"}
-        </p>
+        <div key={key}>
+          <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>
+          {typeof value === 'object' ? (
+            <pre style={{ fontFamily: 'inherit' }}>{JSON.stringify(value, null, 2)}</pre>
+          ) : (
+            <p>{value || "N/A"}</p>
+          )}
+        </div>
       ))}
     </div>
   );

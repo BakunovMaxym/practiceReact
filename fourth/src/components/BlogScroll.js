@@ -95,7 +95,7 @@ function BlogScroll({ pages, setPages, pageNumber, pageCount, handlePageNumber }
                     </div>) 
                     : (<div className="pageBtns">{pageNumber + " of " + pageCount}</div>)
                 }
-                        { Math.max(pageNumber, pages) === pageCount ? (<div/>) : (<button className="prevNext" onClick={() => handlePageNumber(pageNumber + 1)}>Next →</button>)}
+                        { Math.max(pageNumber, pageNumber + pages - 1) === pageCount ? (<div/>) : (<button className="prevNext" onClick={() => handlePageNumber(pageNumber + 1)}>Next →</button>)}
                     </>
             </div>
         </div>

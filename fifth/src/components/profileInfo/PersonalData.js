@@ -23,7 +23,7 @@ function PersonalData({ auth }) {
     const [countryList, setCountryList] = useState([]);
     const [chosenCountry, setChosenCountry] = useState({ country: "Ukraine", cities: [] });
     const [chosenCity, setChosenCity] = useState("");
-    const [date, setDate] = useState();
+    const [date, setDate] = useState(null);
 
     useEffect(() => {
         fetch("https://countriesnow.space/api/v0.1/countries")

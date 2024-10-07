@@ -13,7 +13,7 @@ function PersonalDataContacts() {
     const [email, setEmail] = useState("");
     const [contactNumber, setContactNumber] = useState("");
     const [send, setSend] = useState(false);
-    const [socialMediaFields, setSocialMediaFields] = useState([{}]);
+    const [socialMediaFields, setSocialMediaFields] = useState([{ id: Date.now() }]);
     const [selectedSocialMedia, setSelectedSocialMedia] = useState({});
     const [fsocial, setFSocial] = useState({})
     const [ssocial, setSSocial] = useState({})
@@ -104,8 +104,8 @@ function PersonalDataContacts() {
     }
 
     const addSocialMediaField = () => {// add fields to choose socialmedia
-        const uniqueId = Date.now();
-        setSocialMediaFields([...socialMediaFields, { id: uniqueId }]);
+        const Id = Date.now();
+        setSocialMediaFields([...socialMediaFields, { id: Id }]);
     };
 
     const handleRegister = (e) => {
@@ -128,7 +128,7 @@ function PersonalDataContacts() {
     return (
         <>
             <Header pageNumber="firstsecond" />
-            <Title/>
+            <Title />
             <form className="personalDataForm" onSubmit={handleRegister}>
                 <div className="regsNameContainer">
                     <p className="contactsTittle">Contacts</p>
@@ -177,12 +177,16 @@ function PersonalDataContacts() {
                                 getOptionLabel={(option) => option.name}
                                 onChange={(e, value) => handleSocialMediaChange(field.id, value)}
                                 sx={{ marginBottom: '30px', width: "47%", marginRight: "5%" }}
-                                renderOption={(props, option) => (
-                                    <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                        <FontAwesomeIcon icon={option.icon} style={{ fontSize: option.size, marginRight: "15px" }} />
-                                        {option.name}
-                                    </Box>
-                                )}
+                                key={field.id}
+                                renderOption={(props, option) => {
+                                    const { key, ...restProps } = props;
+                                    return (
+                                        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} key={option.name} {...restProps}>
+                                            <FontAwesomeIcon icon={option.icon} style={{ fontSize: option.size, marginRight: "15px" }} />
+                                            {option.name}
+                                        </Box>
+                                    )
+                                }}
                                 renderInput={(params) => (
                                     <TextField
                                         {...params}
@@ -205,7 +209,7 @@ function PersonalDataContacts() {
                         </div>
                     ))}
 
-                    <button type="button" className="addSocialmedia" style={{ display: `${userInfo.socialMedia.length === 4 ? "none" : "block"}` }} onClick={addSocialMediaField}>+ Add More</button>
+                    <button type="button" className="addSocialmedia" style={{ display: `${socialMediaFields.length === 4 ? "none" : "block"}` }} onClick={addSocialMediaField}>+ Add More</button>
                 </div>
                 <button type="submit" className="sendBtn">Go Next →</button>
             </form>

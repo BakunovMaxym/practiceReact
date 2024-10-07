@@ -35,8 +35,6 @@ function EnterPhone({ auth }) {
     }
   };
 
-  let temp = parseInt(countryCode)
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     handlePhoneNumberSubmit(fullNumber, "enterPhonePage", setErrorMsg);
@@ -65,22 +63,26 @@ function EnterPhone({ auth }) {
                   option.name.toLowerCase().includes(state.inputValue.toLowerCase()) ||
                   option.code.includes(state.inputValue)
                 )}
-                renderOption={(props, option) => (
-                  <Box
-                    component="li"
-                    sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
-                    {...props}
-                  >
-                    <img
-                      loading="lazy"
-                      width="20"
-                      srcSet={`https://flagcdn.com/w40/${option.abbr.toLowerCase()}.png 2x`}
-                      src={`https://flagcdn.com/w20/${option.abbr.toLowerCase()}.png`}
-                      alt=""
-                    />
-                    +{option.code}
-                  </Box>
-                )}
+                renderOption={(props, option) => {
+                  const { key, ...otherProps } = props;
+                  return (
+                    <Box
+                      component="li"
+                      sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
+                      key={`${option.code}-${option.abbr}`}
+                      {...otherProps}
+                    >
+                      <img
+                        loading="lazy"
+                        width="20"
+                        srcSet={`https://flagcdn.com/w40/${option.abbr.toLowerCase()}.png 2x`}
+                        src={`https://flagcdn.com/w20/${option.abbr.toLowerCase()}.png`}
+                        alt=""
+                      />
+                      +{option.code}
+                    </Box>
+                  );
+                }}
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -118,7 +120,6 @@ function EnterPhone({ auth }) {
           <button type="submit" className="sendBtn">Send Code</button>
         </form>
         <div id="recaptcha-container"></div>
-        {/* {element} */}
       </div>
     </>
   );

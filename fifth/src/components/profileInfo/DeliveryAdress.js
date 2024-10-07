@@ -43,6 +43,7 @@ function DeliveryAdress() {
             }));
 
             setTimeout(() => {
+                console.log(userInfo);
                 navigate("/UserInfoPage");
             }, 0);
         }
@@ -77,7 +78,8 @@ function DeliveryAdress() {
                         autoHighlight
                         disableClearable
                         getOptionLabel={(option) => option.country}
-                        sx={{
+                    value={chosenCountry}
+                    sx={{
                             fontSize: '0.9rem',
                             marginBottom: '30px',
                             width: "100%",

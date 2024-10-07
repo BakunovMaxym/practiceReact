@@ -8,7 +8,7 @@ import useClickOutside from "./useClickOuntsude";
 function PalletePage({color}) {
     const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
-    const [format, setFormat] = useState("RBG-(1, 2, 3)");
+    const [format, setFormat] = useState("RGB-(1,2,3)");
     const menuRef = useRef(null);
     const [isSoundOn, setIsSoundOn] = useState(true);
 
